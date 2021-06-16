@@ -1,40 +1,39 @@
-<h2>Crear Fails</h2>
+@model pc04.Models.file 
 
+
+@{
+    ViewData["Title"] = "SubirFail";
+}
+<h1> Subir Archivo Fail </h1>
 
 <hr />
 
-<div class="row">
+    <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                <label asp-for="Name" class="control-label">Nombre de Usuario</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             
             <div class="form-group">
-                <label asp-for="ImagenName" class="control-label">Imagen</label>
+                <label asp-for="ImagenName" class="control-label">URL de Imagenes</label>
                 <input asp-for="ImagenName" class="form-control" />
                 <span asp-validation-for="ImagenName" class="text-danger"></span>
             </div>
-           
-          <div class="form-group">  
-                <label asp-for="Comentario" class="control-label"></label>
+
+             <div class="form-group">
+                <label asp-for="Comentario" class="control-label">Breve comentario</label>
                 <input asp-for="Comentario" class="form-control" />
                 <span asp-validation-for="Comentario" class="text-danger"></span>
             </div>
-
+            
             <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-primary" />
+                <input type="submit" value="Crear" class="btn btn-warning" />
                  <a asp-action="Index"><button class="btn btn-success"> Regresar</button></a>
             </div>
         </form>
     </div>
 </div>
-
-
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

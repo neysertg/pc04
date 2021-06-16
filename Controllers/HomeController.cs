@@ -9,13 +9,13 @@ using pc04.Models;
 
 namespace pc04.Controllers
 {
-    public class HomeController : Controller
+     public class HomeController : Controller
     {
-        
+        private readonly ILogger<HomeController> _logger;
 
-        public HomeController()
+        public HomeController(ILogger<HomeController> logger)
         {
-            
+            _logger = logger;
         }
 
         public IActionResult Index()
@@ -23,7 +23,10 @@ namespace pc04.Controllers
             return View();
         }
 
-       
+        public IActionResult SubirFail()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

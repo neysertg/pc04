@@ -6,8 +6,8 @@ using System;
 namespace pc04.Models{
 
 
-[Table("t_File")]
-    public class Contacto{
+[Table("t_file")]
+    public class file{
 
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id")]
@@ -17,15 +17,13 @@ namespace pc04.Models{
     [Required(ErrorMessage = "Por favor ingrese su Nombre")]
     [Display(Name = "Nombre")]
      public string Name { get; set; }
-
-
-    [Required(ErrorMessage = "Ingrese el nombre de la imagen")]
-
-
+    
+    
+    [Required(ErrorMessage = "Por favor la imagen")]
+    
     public String ImagenName { get; set; }
 
     public string Comentario{ get; set; }
-
 
 
 }
